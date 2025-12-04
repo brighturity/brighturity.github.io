@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘柏君 - 个人介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .name-animation { animation: fadeInUp 1.5s ease-out; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-hover { transition: transform .3s ease; }
+        .card-hover:hover { transform: translateY(-5px); }
+        .progress-bar { height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden; }
+        .progress-value { 
+            height: 100%; 
+            border-radius: 4px; 
+            background: linear-gradient(90deg, #3b82f6, #f97316); 
+            transition: width 1.5s ease-in-out; 
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50">
+
+    <!-- 导航 -->
+    <nav class="bg-white shadow fixed w-full z-10" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-600 flex items-center">
+                <i class="fa fa-paint-brush mr-2"></i>刘柏君
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-blue-600">关于我</a>
+                <a href="#skills" class="hover:text-blue-600">技能</a>
+                <a href="#experiences" class="hover:text-blue-600">经历</a>
+                <a href="#hobbies" class="hover:text-blue-600">兴趣</a>
+                <a href="#contact" class="hover:text-blue-600">联系</a>
+            </div>
+            <button class="md:hidden" id="menu-toggle"><i class="fa fa-bars text-xl"></i></button>
+        </div>
+        <div class="md:hidden hidden bg-white w-full" id="mobile-menu">
+            <div class="px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="py-2 hover:text-blue-600">关于我</a>
+                <a href="#skills" class="py-2 hover:text-blue-600">技能</a>
+                <a href="#experiences" class="py-2 hover:text-blue-600">经历</a>
+                <a href="#hobbies" class="py-2 hover:text-blue-600">兴趣</a>
+                <a href="#contact" class="py-2 hover:text-blue-600">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 标题区 -->
+    <header class="pt-28 pb-16 bg-gradient-to-br from-blue-50 to-orange-50 text-center">
+        <h1 class="name-animation text-5xl md:text-6xl font-bold mb-4 text-blue-600">刘柏君</h1>
+        <p class="text-xl md:text-2xl text-gray-600">山东建筑大学 · 工业设计 · 大二</p>
+        <p class="mt-6 text-lg text-gray-700 italic">"设计源于生活，创意点亮未来"</p>
+    </header>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-blue-600"><i class="fa fa-user mr-2"></i>关于我</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fa fa-id-card-o text-blue-600 w-8"></i><span>姓名：刘柏君</span></li>
+                        <li class="flex items-center"><i class="fa fa-venus text-pink-500 w-8"></i><span>性别：女</span></li>
+                        <li class="flex items-center"><i class="fa fa-graduation-cap text-green-600 w-8"></i><span>学校：山东建筑大学</span></li>
+                        <li class="flex items-center"><i class="fa fa-book text-purple-600 w-8"></i><span>专业：工业设计</span></li>
+                        <li class="flex items-center"><i class="fa fa-map-marker text-red-600 w-8"></i><span>家乡：山东烟台</span></li>
+                        <li class="flex items-center"><i class="fa fa-users text-orange-600 w-8"></i><span>班级职位：团支书</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="mb-4">性格阳光开朗，热爱生活与设计，喜欢将创意想法转化为实际作品。</p>
+                    <p>作为班级团支书，积极组织团学活动；同时参与各类设计赛事与社会实践，持续提升专业能力与综合素质。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-blue-600"><i class="fa fa-star mr-2"></i>技能特长</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2"><span class="font-medium">设计软件</span><span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-value" style="width:85%"></div></div>
+                        <p class="text-sm text-gray-600">Photoshop、Illustrator、AutoCAD、Rhino</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2"><span class="font-medium">手绘能力</span><span>90%</span></div>
+                        <div class="progress-bar"><div class="progress-value" style="width:90%"></div></div>
+                        <p class="text-sm text-gray-600">产品草图、透视绘画、色彩搭配</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2"><span class="font-medium">创新思维</span><span>88%</span></div>
+                        <div class="progress-bar"><div class="progress-value" style="width:88%"></div></div>
+                        <p class="text-sm text-gray-600">头脑风暴、用户调研、方案迭代</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2"><span class="font-medium">团队协作</span><span>92%</span></div>
+                        <div class="progress-bar"><div class="progress-value" style="width:92%"></div></div>
+                        <p class="text-sm text-gray-600">团学活动组织、小组项目协作、跨专业沟通</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl h-80">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经历 -->
+    <section id="experiences" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-blue-600"><i class="fa fa-history mr-2"></i>学习与实践</h2>
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <div class="card-hover bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-lg">山东建筑大学工业设计专业</h3>
+                    <p class="text-blue-600 text-sm mb-2">2023.09 - 至今</p>
+                    <p class="text-sm">主修：产品设计原理、人机工程学、设计素描、色彩构成、计算机辅助设计等</p>
+                </div>
+                <div class="card-hover bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-lg">班级团支书</h3>
+                    <p class="text-blue-600 text-sm mb-2">2023.09 - 至今</p>
+                    <p class="text-sm">组织主题团日活动、协调班级团学事务、凝聚班级凝聚力</p>
+                </div>
+                <div class="card-hover bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-lg">校设计协会会员</h3>
+                    <p class="text-blue-600 text-sm mb-2">2023.10 - 至今</p>
+                    <p class="text-sm">参与校园设计周策划、组织设计作品交流分享会、参与设计赛事筹备</p>
+                </div>
+                <div class="card-hover bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-semibold text-lg">志愿者服务</h3>
+                    <p class="text-blue-600 text-sm mb-2">2024.03 - 2024.06</p>
+                    <p class="text-sm">参与社区环保宣传设计、制作公益活动海报、协助组织志愿服务活动</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 兴趣 -->
+    <section id="hobbies" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-blue-600"><i class="fa fa-heart mr-2"></i>兴趣爱好</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="card-hover bg-white p-6 rounded-xl"><i class="fa fa-paint-brush text-blue-600 mb-3 text-xl"></i><h3 class="font-medium">设计创作</h3></div>
+                <div class="card-hover bg-white p-6 rounded-xl"><i class="fa fa-music text-blue-600 mb-3 text-xl"></i><h3 class="font-medium">艺术活动</h3></div>
+                <div class="card-hover bg-white p-6 rounded-xl"><i class="fa fa-tree text-blue-600 mb-3 text-xl"></i><h3 class="font-medium">户外运动</h3></div>
+                <div class="card-hover bg-white p-6 rounded-xl"><i class="fa fa-users text-blue-600 mb-3 text-xl"></i><h3 class="font-medium">团学工作</h3></div>
+                <div class="card-hover bg-white p-6 rounded-xl"><i class="fa fa-laptop text-blue-600 mb-3 text-xl"></i><h3 class="font-medium">技能学习</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-blue-600"><i class="fa fa-envelope mr-2"></i>联系方式</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-envelope"></i></div>
+                        <div><h4 class="font-semibold">邮箱</h4><p>3402269771@qq.com</p></div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-qq"></i></div>
+                        <div><h4 class="font-semibold">QQ</h4><p>3402269771</p></div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-4"><i class="fa fa-phone"></i></div>
+                        <div><h4 class="font-semibold">联系电话</h4><p>19862125200</p></div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center md:justify-end">
+                    <a href="https://github.com" target="_blank" class="flex items-center bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700 transition-colors">
+                        <i class="fa fa-github mr-2 text-xl"></i>
+                        <span>访问我的GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-6 bg-gray-100 text-center text-gray-600">
+        <p>© 2025 刘柏君 | 山东建筑大学工业设计专业</p>
+    </footer>
+
+    <script>
+        // 移动端菜单
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // 技能雷达图
+        window.addEventListener('load', () => {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['设计软件', '手绘能力', '创新思维', '团队协作'],
+                    datasets: [{
+                        label: '技能水平',
+                        data: [85, 90, 88, 92],
+                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                        pointBorderColor: '#fff'
+                    }]
+                },
+                options: {
+                    scales: { r: { beginAtZero: true, max: 100 } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        });
+
+        // 进度条动画
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.progress-value').forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(document.getElementById('skills'));
+    </script>
+</body>
+</html>
